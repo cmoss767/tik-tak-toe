@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
+const audio = new Audio("../popSound.mp3")
+audio.play() 
 function Square(props) {
     return (
-      <button className="square" onClick={props.onClick}>
+      <button className="square" onClick={props.onClick} >
         {props.value}
       </button>
     );
