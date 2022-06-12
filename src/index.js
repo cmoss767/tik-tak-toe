@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import sound from "./popSound.mp3"
 
-const audio = new Audio("../popSound.mp3")
-audio.play() 
+const audio = new Audio(sound);
+
+const start = () => {
+  audio.play();
+  console.log('click')
+};
+
 function Square(props) {
     return (
       <button className="square" onClick={props.onClick} >
@@ -18,7 +24,10 @@ class Board extends React.Component {
     return (
     <Square 
     value={this.props.squares[i]}
-    onClick={()=> this.props.onClick(i)}
+    onClick={()=>{
+      this.props.onClick(i)
+      start()
+    } }
     />)
   }
 
